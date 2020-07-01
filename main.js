@@ -3,15 +3,32 @@
  ******************/
 
 
-
-function indexedChars (givenString){
+function indexedChars (str){
   let result = '';
-  for ( let i = 0; i < String.length; i ++) {
+  for ( let i = 0; i < str.length; i ++) {
     result = result + i + str[i];
   }
   return result;
+}
 
 
+
+
+function exclaim(sentence) {
+  let exclaimed = '';
+
+  for (let i = 0; i < sentence.length; i++) {
+    const character = sentence[i];
+    if(character === '?' || character === '.') {
+      exclaimed = exclaimed + '!';
+    }
+  
+  else {
+    exclaimed = exclaimed + character;
+  }
+  }
+  return exclaimed ;
+}
 
 
 function repeatIt(str, max) {
@@ -23,7 +40,7 @@ function repeatIt(str, max) {
   }
   return repeated;
 }
-}
+
 
 
 
@@ -84,6 +101,7 @@ function numberedChars(str) {
   for (let i = 0; i < str.length; i ++){
     result = result + '(' + (i + 1) + ')' + str[i];
   }
+  return result;
 }
 
 
@@ -106,7 +124,7 @@ function titleCase(str) {
 
   for (let i = 0; i < str.length; i++) {
     const character = str[i].toLowerCase();
-    if (i === 0 || styr[i - 1] === ' ') {
+    if (i === 0 || str[i - 1] === ' ') {
       title =  title + character.toUpperCase();
     }
     else {
@@ -115,6 +133,7 @@ function titleCase(str) {
   }
   return title
 }
+console.log(titleCase('hello there how are you'))
 
 
 
@@ -125,10 +144,10 @@ function camelCase(str) {
     const prev = str[i - 1];
     if (char !== ' ') {
       if(prev === ' ') {
-      result = resutl + char.toUpperCase();
+      result = result + char.toUpperCase();
     }
     else if (i === 0) {
-      result = rtesult + char.toLowerCase();
+      result = result + char.toLowerCase();
     }
     else {
       result  =  result + char;
