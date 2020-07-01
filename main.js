@@ -4,13 +4,147 @@
 
 
 
+function indexedChars (givenString){
+  let result = '';
+  for ( let i = 0; i < String.length; i ++) {
+    result = result + i + str[i];
+  }
+  return result;
+
+
+
+
+function repeatIt(str, max) {
+  let repeated = '';
+  let count = 0;
+  while(count < max) {
+    repeated = repeated + str;
+    count = count + 1;
+  }
+  return repeated;
+}
+}
+
+
+
+function truncate(str){
+  if (str.length < 18) {
+    return str;
+  }
+  let result = '';
+  for(let i = 0; i < 15; i++) {
+    result = result + str[i];
+  }
+  return result + '...';
+}
+
+
+
+function ciEmailify(name) {
+  let email = '';
+  for(let i = 0; i < name.length; i++) {
+    if (name[i] === ' ') {
+      email = email + '.';
+    } else {
+      email = email + name[i].toLowerCase();
+    }
+  }
+  return email + '@codeimmersives.com'
+}
+const email = ciEmailify('Colin Jaffe');
+email;
+
+
+
+function reverse(str){
+  let reversed = '';
+  for (let i = str.length - 1; i >= 0; i --){
+    reversed = reversed + str[i];
+  }
+  return reversed;
+}
+
+
+
+function  onlyVowels(str) {
+  const aeiou = 'aeiouAEIOU';
+  let vowels = '';
+  for (let i = 0; i < str.length; i ++) {
+    const character = str[i];
+    if (aeiou.includes(character)) {
+      vowels = vowels + character;
+    }
+  }
+  return vowels;
+}
+
+
+function numberedChars(str) {
+  let result = '';
+  for (let i = 0; i < str.length; i ++){
+    result = result + '(' + (i + 1) + ')' + str[i];
+  }
+}
+
+
+function crazyCase(str) {
+  let crazyCased = '';
+  
+  for(let i = 0; i < str.length; i ++) {
+    if (i % 2 === 0) {
+      crazyCased = crazyCased + str[i].toLowerCase()
+    } else{
+      crazyCased = crazyCased + str[i].toUpperCase()
+    }
+  }
+  return crazyCased;
+}
+
+
+function titleCase(str) {
+  let title = '';
+
+  for (let i = 0; i < str.length; i++) {
+    const character = str[i].toLowerCase();
+    if (i === 0 || styr[i - 1] === ' ') {
+      title =  title + character.toUpperCase();
+    }
+    else {
+      title = title + character;
+    }
+  }
+  return title
+}
+
+
+
+function camelCase(str) {
+  let result = '';
+  for (let i = 0; i < str.length; i ++) {
+    const char = str[i];
+    const prev = str[i - 1];
+    if (char !== ' ') {
+      if(prev === ' ') {
+      result = resutl + char.toUpperCase();
+    }
+    else if (i === 0) {
+      result = rtesult + char.toLowerCase();
+    }
+    else {
+      result  =  result + char;
+    }
+    }
+  }
+  return result
+}
 
 
 
 
 
 
- /********************************************
+
+/********************************************
  * CODE DOWN HERE IS FOR INTERNAL USE ONLY. *
  *           PLEASE DON'T TOUCH!            *
  ********************************************/
